@@ -9,7 +9,7 @@ For example a 5 min quiz is a lot less demanding/stressful that a large project 
 
 ### Setup instructions
 to ensure a correct installation ofthe program clone the entire repo from github with the command
-$ git clone "https://github.com/J-HTTaylor/CS408-401"$
+`git clone "https://github.com/J-HTTaylor/CS408-401"`
 
 The following files should be cloned over:
 - .github/workflows/pr-validation.yml
@@ -67,7 +67,7 @@ If you want to run the application locally in the production mode, use `package`
 
 ### Debugging Token
 To double check that the api works correctly you can use the following bash command:
-$ curl -H "Authorization: Bearer YOUR_CANVAS_TOKEN"https://boisestatecanvas.instructure.com/api" $
+`curl -H "Authorization: Bearer YOUR_CANVAS_TOKEN"https://boisestatecanvas.instructure.com/api"`
 
 If it returns a html doctype then the api and token has no issues.
 
