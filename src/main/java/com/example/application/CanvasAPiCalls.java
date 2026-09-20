@@ -76,9 +76,10 @@ public class CanvasAPiCalls {
             JsonNode baseNode = mapper.readTree(canvasResponse.body());
 
             //adds all assignments upcoming for the week for a given course 
+            //Takes into account that external tools are used by canvas so it says they are always needing to be shown (better news than no news)
             for(JsonNode currrentNode : baseNode){
-                if(currrentNode.get("context_name").asString().equals(courseName)){   
-                    assignments.add(new String[]{currrentNode.get("title").asString(), currrentNode.get("all_day_date").asString(),currrentNode.get("context_name").asString(), currrentNode.get("html_url").asString()});
+                if(currrentNode.get("context_name").asString().equals(courseName)&& (currrentNode.path("assignment").path("has_submitted_submissions").asBoolean() == false) || currrentNode.path("assignment").has("external_tool_tag_attributes")){   
+                    assignments.add(new String[]{currrentNode.get("title").asString(), currrentNode.get("all_day_date").asString(), currrentNode.get("html_url").asString()});
                 }
             }
         }

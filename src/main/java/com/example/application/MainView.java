@@ -61,7 +61,7 @@ public class MainView extends VerticalLayout {
         // adds a button that takes you to the asignment page in a new tab
         assignments_details.addComponentColumn(assignment -> {
             Button linkButton = new Button("View", clickEvent -> {
-                String linkUrl = assignment[3]; 
+                String linkUrl = assignment[2]; 
                 UI.getCurrent().getPage().open(linkUrl, "_blank");
                 Notification.show("Opening: " + assignment[0]);
             });

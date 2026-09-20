@@ -1,11 +1,45 @@
-# Project Base for Vaadin and Spring Boot
+### weekly assignment collecter
+The following program will show a given canvas' user any assignments that need to be completed for the following week, provides their due date and a link to their submission page.
+It automatically ommits all assignments that have been submitted at least once.
+Each set of incomplete assignments are automaically sorted by the user's currently enrolled courses which can be selected and searched via the Combo Box at the top left of the page.
+The only exception to this rule is anyting that makes use of an external tool to get scores/ submission such as 'ZyBooks'.
+This prevents any assignment being overlooked.
 
-This project can be used as a starting point to create your own Vaadin application with Spring Boot.
-It contains all the necessary configuration and some placeholder files to get you started.
+### Setup instructions
+to ensure a correct installation ofthe program clone the entire repo from github with the command
+$ git clone "https://github.com/J-HTTaylor/CS408-401"$
 
-The best way to create your own project based on this starter is [start.vaadin.com](https://start.vaadin.com/) - you can get only the necessary parts and choose the package naming you want to use.
+The following files should be cloned over:
+- .github/workflows/pr-validation.yml
+- .mvm/wrapper/maven-wrapper.jar
+- .mvm/wrapper/maven-wrapper.properties
+- .mvm/wrapper/MarvenWrapperDownloader.java
+- /src/main/fronted/index.html
+- /src/main/java/com/example/application/Application.java
+- /src/main/java/com/example/application/CanvasAPiCalls.java
+- /src/main/java/com/example/application/MainView.java
+- /src/main\resources/META-INF/resources/icons/icon.png
+- /src/main/resources/META-INF/resources/styles.css
+- /src/main/resources/META-INF/resources/application.properties.example (this is used instead of the usual .env file)
+- .gitignore
+- .gitpod.Dockerfile
+- .gitpod.yml
+- mvnw
+- mvnw.cmd
+- pom.xml
+- README.md
 
-## Running the Application
+JDK 21+ is needed to fully run this program with no issues
+Maven is not needed to be pre-installed due to the use of a maven wrapper exisitng.
+
+The following APis used and their usage in the program is below:
+
+| Header 1 | Header 2 | Header 3 |
+| -------- | -------- | -------- |
+| Row 1 A  | Row 1 B  | Row 1 C  |
+| Row 2 A  | Row 2 B  | Row 2 C  |
+
+### Running the Application
 There are two ways to run the application :  using `mvn spring-boot:run` or by running the `Application` class directly from your IDE.
 
 You can use any IDE of your preference,but we suggest Eclipse or Intellij IDEA.
@@ -14,37 +48,17 @@ Below are the configuration details to start the project using a `spring-boot:ru
 #### Eclipse
 - Right click on a project folder and select `Run As` --> `Maven build..` . After that a configuration window is opened.
 - In the window set the value of the **Goals** field to `spring-boot:run` 
-- You can optionally select `Skip tests` checkbox
-- All the other settings can be left to default
 
 Once configurations are set clicking `Run` will start the application
 
 #### Intellij IDEA
 - On the right side of the window, select Maven --> Plugins--> `spring-boot` --> `spring-boot:run` goal
-- Optionally, you can disable tests by clicking on a `Skip Tests mode` blue button.
 
 Clicking on the green run button will start the application.
 
 After the application has started, you can view your it at http://localhost:8080/ in your browser.
 
-
 If you want to run the application locally in the production mode, use `package` and `java -jar target/spring-skeleton-1.0-SNAPSHOT.jar` commands instead.
-### Running Integration Tests
-
-Integration tests are implemented using [Vaadin TestBench](https://vaadin.com/testbench). The tests take a few minutes to run and are therefore included in a separate Maven profile. We recommend running tests with a production build to minimize the chance of development time toolchains affecting test stability. To run the tests using Google Chrome, execute
-
-`mvn verify -Pit`
-
-and make sure you have a valid TestBench license installed.
-
-Profile `it` adds the following parameters to run integration tests:
-```sh
--Dwebdriver.chrome.driver=path_to_driver
--Dcom.vaadin.testbench.Parameters.runLocally=chrome
-```
-
-If you would like to run a separate test make sure you have added these parameters to VM Options of JUnit run configuration
-
 
 ### Debugging Token
 To double check that the api works correctly you can use the following bash command:
