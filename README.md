@@ -36,7 +36,7 @@ The following APis used and their usage in the program is below:
 
 | Api Endpoint | Purpose | Data retrived |
 | -------- | -------- | -------- |
-| GET /api/v1/users/self/courses?enrollment_state=active | Lists all of the curently enrolled courses for a given user| <b><span style="color:blue"name</span></b> - name of the course.|
+| GET /api/v1/users/self/courses?enrollment_state=active | Lists all of the curently enrolled courses for a given user| <bu>name</bu> - name of the course.|
 | GET /api/v1/users/self/upcoming_events | Used to get all upcoming assignments and events assigned to a given user| <b>Context_name</b> - gets the name of the course used to filter to a given course <br><b>assignment{has_submitted_submissions}</b> - used to see if any file has been submitted by the user<br><b>assignment{external_tool_tag_attributes}</b> - used to check if an external tool is used to create/provide a subimssion or grade<br><b>all_day_date</b> - used for getting the due date of the assignment<br><b>html_url</b> - used to get a link to the assignment page used by the button.
 
 
