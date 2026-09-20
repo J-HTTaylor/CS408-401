@@ -20,4 +20,4 @@ drivers/
 error-screenshots/
 webpack.generated.js
 
-src/main/resources\/pplication.properties
+src/main/resources\/application.properties
