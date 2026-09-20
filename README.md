@@ -34,10 +34,10 @@ Maven is not needed to be pre-installed due to the use of a maven wrapper exisit
 
 The following APis used and their usage in the program is below:
 
-| Header 1 | Header 2 | Header 3 |
+| Api Endpoint | Purpose | Data retrived |
 | -------- | -------- | -------- |
-| Row 1 A  | Row 1 B  | Row 1 C  |
-| Row 2 A  | Row 2 B  | Row 2 C  |
+| GET /api/v1/users/self/courses?enrollment_state=active | Lists all of the curently enrolled courses for a given user| name - name of the course.|
+| GET /api/v1/users/self/upcoming_events | Used to get all upcoming assignments and events assigned to a given user| Context_name - gets the name of the course used to filter to a given course <br>assignment{has_submitted_submissions} - used to see if any file has been submitted by the user<br>|assignment{external_tool_tag_attributes} - used to check if an external tool is used to create/provide a subimssion or grade<br> all_day_date - used for getting the due date of the assignment<br>html_url - used to get a link to the assignment page used by the button.
 
 ### Running the Application
 There are two ways to run the application :  using `mvn spring-boot:run` or by running the `Application` class directly from your IDE.
