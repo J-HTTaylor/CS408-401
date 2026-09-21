@@ -71,6 +71,16 @@ To double check that the api works correctly you can use the following bash comm
 
 If it returns a html doctype then the api and token has no issues.
 
+### About pagination
+Throught this project users will notice that there is not formal pagination, there are 2 reasons for this.
+The first is data size. Each of the fields that is visable to the end user does not recieve enough data to justify its useage.
+For example a student would have a maximum of 7 courses available to them for a single semester.
+Any more than this requires explicit allowances from the university admins.
+This is also true for assignments. A single course will have at most 10 assignments due per week, most have 3-5.
+The nature of the semi-restriced scope used prevents excessive data being pulled that would require its usage.
+The seond reason is that Vaadin makes use of what they call 'lazy loading' in which each inbuilt component such as the combo box or drop down menu has an pre-set size and max value before it automatically cuts off what is recieved in a single instance. This mornally happenes with data > 100 entires but it also does it visually. This best example of this is the combo box where if there are more than 10 entires and the size ofthe box has not been altered it will add a scroll bar for ease of use.
+The combination of these two factors means that pagination is not needed for these specific API's but would have to be used for larger data sets without restricted perameters. 
+
 ### Reflection
 This project was one of the biggest coinfidence knocks that I have received in quite a while. 
 Luckily Vaadin provides an empty project skeleton that ensures that it at least runs to a page saying "hello world". This lead me into an area of false confidence.
